@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#navigation{
+    height: 70px;
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+#study{
+    width: 12%;
+    height: 100%;
+    margin-left: 100px;
+    padding-top: 15px ;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg,#CA4DE7, #3379E4);
+}
+.tabs{
+    height: 100%;
+    width: 45%;
+    justify-content: end;
+    font-size: 20px;
+    font-weight: bold; 
+    text-align: center;
+    margin-right: 150px ;
+    display: flex;
+    justify-content: space-around;
+    line-height: 70px;
+}
+.tabs>a{
+    text-decoration: none;
+    color: black;
+}
+#blue{
+    color: #508AFC;
+}
+
+#container{
+    width: 93%;
+    box-sizing: border-box;
+    height: 700px;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    padding-right: 100px;
+}
+#left{
+    box-sizing: border-box;
+    width: 40%;
+    margin-top: 50px;
+    margin: auto;
+    /* margin-left: 80px; */
+}
+#heading>h4{
+    color: #4A85FC;
+}
+#heading>h1{
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+#paragraph{
+    font-size: 22px;
+    line-height: 30px;
+    color: #989999;
+}
+#paragraph>p{
+    margin-top: 30px;
+    display: flex;
+}
+#bottom{
+    margin-top: 30px;
+    display: flex;
+}
+#bottom>img{
+    width: 200px;
+}
+#bottom>p{
+    font-size: 22px;
+    margin: 30px 20px 0 50px;
+}
+#right{
+    width: 45%;
+    height: 100%;
+    /* border: 2px solid red; */
+    margin: auto;
+    box-sizing: border-box;
+}
+.box{
+    width: 100%;
+    height: 50%;
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 20px;
+}
+.card{
+    width: 42%;
+    height: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-right: 30px;
+    margin-right: 30px;
+}
+.card>img{
+    width: 80px;
+    border-radius: 50px;
+    margin-top: 35px;
+}
+.card>p{
+    color: #989999;
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 30px;
+}
+
