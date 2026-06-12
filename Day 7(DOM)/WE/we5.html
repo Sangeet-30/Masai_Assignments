@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Masai Application </title>
+</head>
+<body>
+
+    <h1>Masai School</h1>
+    <p>Enter your name and gender to apply for masai school</p>
+    <h2 id="display">Display entered name and gender here</h2>
+    <hr>
+    <input type="text" id="name" placeholder="Enter your name">
+    <select id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <button onclick="Print()">Apply</button>
+    
+</body>
+</html>
+<script>
+
+    let show = document.getElementById("display")
+    let n = document.getElementById("name")
+    let g = document.getElementById("gender")
+
+    function Print(){
+
+        show.innerText = `Name: ${n.value} 
+        Gender: ${g.value}`
+        // template laternals
+        // css positions
+    }
+
+
+</script>

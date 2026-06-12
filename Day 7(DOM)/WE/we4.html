@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login and Logout basic DOM</title>
+</head>
+<body>
+    
+    <h1>This example demostrates how we can change text content when clicking on button</h1>
+    <hr>
+    <h1 id="display">Click on Login to continue</h1>
+    <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
+
+</body>
+</html>
+<script>
+    let a = document.getElementById("display")
+
+    function login(){
+        a.innerText = "Login Success"
+    }
+
+    function logout(){
+        a.innerText = "Logout Success"
+    }
+
+</script>
