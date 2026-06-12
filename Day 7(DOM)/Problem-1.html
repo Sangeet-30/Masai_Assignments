@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calulator</title>
+</head>
+<body>
+    <br>
+    <br>
+    <input id="first" type="number" placeholder="Enter first number">
+    <input id="second" type="number" placeholder="Enter second number">
+    <h2 id="answere" >Answer will be displayed here</h2>
+
+    <button onclick="Add()" >Addition</button>
+    <button onclick="Sub()" >Subtaction</button>
+    <button onclick="Multiply()" >Multiplication</button>
+    <button onclick="Divide()" >Division</button>
+    
+</body>
+</html>
+<script>
+    let a = document.getElementById("first")
+    let b = document.getElementById("second")
+    let ans = document.getElementById("answer")
+
+    function Add(){
+        a = parseInt(a.value)
+        b = parseInt(b.value)
+        let sum = a+b
+        ans.innerText = `Sum of numbers: ${sum}`
+    }
+
+    function Sub(){
+        a = parseInt(a.value)
+        b = parseInt(b.value)
+        let sum = a-b
+        ans.innerText = `Difference of numbers: ${sum}`
+    }
+
+    function Multiply(){
+        a = parseInt(a.value)
+        b = parseInt(b.value)
+        let sum = a*b
+        ans.innerText = `Multiplication of numbers: ${sum}`
+    }
+
+    function Divide(){
+        a = parseInt(a.value)
+        b = parseInt(b.value)
+        let sum = a/b
+        ans.innerText = `Division of numbers: ${sum}`
+    }
+
+
+</script>
