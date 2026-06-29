@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+#heading{
+    margin-top: 30px;
+    color: #018080;
+    text-align: center;
+    font-size: 25px;
+}
+#box{
+    margin: auto;
+    margin-top: 40px;
+    width: 400px;
+    height: 480px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    padding: 30px 25px 35px 25px;
+    gap: 15px;
+}
+#box div{
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* margin: 10px; */
+    text-align: center;
+    box-sizing: border-box;
+}
+#display{
+    grid-area: 1/1/2/5;
+}
+#box .black{
+    color: white;
+    background-color: black;
+}
+#box .red{
+    color: white;
+    background-color: red;
+}
+#box div{
+    line-height: 400%;
+}
+
+#box div:not(#display, .black, .red):hover{
+    background-color: grey;
+}
+#box .black:hover{
+    background-color: darkblue;
+}
+#box .red:hover{
+    background-color: darkred;
+}
+#box div:not(#display):hover{
+    transform: scale(1.1);
+}
+#display{
+    font-size: 20px;
+    font-weight: bolder;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Masai Calculator </title>
+    <link rel="stylesheet" href="Pro-1.css">
+</head>
+<body>
+    
+    <div id="heading">
+        <h1>Masai Calculator</h1>
+    </div>
+
+    <div id="box">
+        <div id="display"></div>
+        <div> <h2>1</h2> </div>
+        <div> <h2>2</h2> </div>
+        <div> <h2>3</h2> </div>
+        <div class="black"> <h2>+</h2> </div>
+        <div> <h2>4</h2> </div>
+        <div> <h2>5</h2> </div>
+        <div> <h2>6</h2> </div>
+        <div class="black"> <h2>-</h2> </div>
+        <div> <h2>7</h2> </div>
+        <div> <h2>8</h2> </div>
+        <div> <h2>9</h2> </div>
+        <div class="black"> <h2>*</h2> </div>
+        <div class="red"> <h2>C</h2> </div>
+        <div> <h2>0</h2> </div>
+        <div class="black"> <h2>=</h2> </div>
+        <div class="black"> <h2>/</h2> </div>
+    </div>
+
+</body>
+</html>
+
+  <script>
+
+let keys  = document.querySelectorAll("#box >div")
+
+let bag =""
+for(let i=0 ; i<keys.length ; i++){
+    keys[i].addEventListener("click",function(event){
+      let targetNumber  = event.target.innerText;
+
+      if(targetNumber == "C"){
+        bag="";
+        document.querySelector("#display").innerText = ""
+      }
+      else if(targetNumber == "="){
+        document.querySelector("#display").innerText =eval(bag)
+      }
+      else{
+       bag+=targetNumber
+       document.querySelector("#display").innerText = bag
+      }
+    })
+}
+
+  </script>
