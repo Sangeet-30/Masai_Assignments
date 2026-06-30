@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Timer Clock</title>
+    <link rel="stylesheet" href="W-E.css">
+</head>
+<body>
+    
+    <div id="heading">
+        <h1> Timer Clock 🕒 </h1>
+    </div>
+    <div id="clock">
+
+        <div id="clockHands">
+            <div id="hour"> 00 <span> : </span></div>
+            <div id="min"> 00 <span> : </span></div>
+            <div id="sec"> 00</div>
+        </div>
+        
+        <div id="hand_name">
+            <div> Hours </div>
+            <div> Minutes </div>
+            <div> Seconds </div>
+        </div>
+    </div>
+
+    <div id="buttons">
+        <button id="start"> START <br> ▶ </button>
+        <button id="stop"> STOP <br> ◼ </button>
+        <button id="reset"> RESET <br> ↻ </button>
+    </div>
+    
+    
+</body>
+</html>
+
+<script>
+
+    let hour_el = document.getElementById("hour")
+    let min_el = document.getElementById("min")
+    let sec_el = document.getElementById("sec")
+
+    let startButton = document.getElementById("start")
+        startButton.addEventListener("click",function(){
+
+            let hour = 0 ;
+            let min = 0 ;
+            let sec = 0 ;
+
+            time = setInterval(function(){
+                sec ++
+                if (sec>=4){
+                    sec = 0
+                    min ++ 
+                    if (min>=4){
+                        min = 0
+                        hour ++
+                        hour_el.innerText= hour
+                        }
+                    min_el.innerText = min
+                    }
+                sec_el.innerText = sec
+                },1000)
+        })
+
+    let stopButton = document.getElementById("stop")
+        stopButton.addEventListener("click",function(){
+            clearInterval(time)
+        })
+        
+    let resetButton = document.getElementById("reset")
+        resetButton.addEventListener("click",function(){
+            clearInterval(time)
+            hour_el.innerText = "00 :"
+            min_el.innerText = "00 :"
+            sec_el.innerText = "00"
+
+        })
+
+    
+
+</script>
