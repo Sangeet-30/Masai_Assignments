@@ -37,6 +37,9 @@
     /* border-radius: 10px; */
     
 }
+#clockHands span{
+    font-size: 120px;
+}
 
 #clock #hand_name{
     padding: 0 0 0 10px;

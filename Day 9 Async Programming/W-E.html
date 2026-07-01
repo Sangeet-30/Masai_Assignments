@@ -14,8 +14,8 @@
     <div id="clock">
 
         <div id="clockHands">
-            <div id="hour"> 00 <span> : </span></div>
-            <div id="min"> 00 <span> : </span></div>
+            <div id="hour"> 00</div> <span> : </span>
+            <div id="min"> 00 </div> <span> : </span>
             <div id="sec"> 00</div>
         </div>
         
@@ -73,8 +73,8 @@
     let resetButton = document.getElementById("reset")
         resetButton.addEventListener("click",function(){
             clearInterval(time)
-            hour_el.innerText = "00 :"
-            min_el.innerText = "00 :"
+            hour_el.innerText = "00"
+            min_el.innerText = "00"
             sec_el.innerText = "00"
 
         })
