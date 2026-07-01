@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiggy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        
+      *,
+      *::before,
+      *::after{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* *{
+        font-family: "Inter", sans-serif;
+      } */
+
+      .nav{
+        width: 100%;
+        height: 65px;
+        padding: 5px 100px 5px 100px;
+        display: flex;
+        border: 2px solid black;font-family: "Inter", sans-serif;
+      }
+      .nav img{
+        height: 100%;
+      }
+      .nav div{
+        color : #4191D7 ;
+        width: 60%;
+        height: 100%;
+        margin-left: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        /* border: 2px solid blue; */
+      }
+      .nav div p{
+        font-weight: 500;
+      }
+
+      .nav button{
+        width: 10%;
+        height: 100%;
+        font-size: 18px;
+        font-weight: 600;
+        color: white;
+        background-color: #FF0000;
+        border-radius: 10px;
+        margin-left: 150px;
+        border: none;
+      }
+
+      .top{
+        width: 100%;
+        height: 300px;
+        background-color: black;
+        padding: 40px 100px 40px 100px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+      }
+      .top img{
+        height: 100%;
+        width: 22%;
+      }
+
+      .mid {
+        width: 100%;
+        height: 700px ;
+        background-color: #F2F2F2;
+        /* border: 2px solid black; */
+        padding: 30px 100px 30px 100px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-auto-rows: 50%;
+        gap: 20px;
+
+      }
+      .mid .cards{
+        text-align: center;
+        background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+      }
+      .mid .cards img{
+        width: 100%;
+        height: 55%;
+      }
+      .mid .cards h2{
+        margin-top: 15px;
+      }
+      .mid .cards p{
+        margin-top: 10px;
+      }
+      .mid .cards h2+p{
+        font-size: 14px;
+        padding: 0 5px 0 5px;
+      }
+
+      .bottom{
+        width: 100%;
+        height: 450px;
+        padding: 20px 100px 0 100px;
+        background-color: #F2F2F2;
+      }
+      .bottom div{
+        height: 80%;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+      }
+      .bottom div img{
+        width: 30%;
+      }
+
+    </style>
+
+  </head>
+  
+  <body>
+
+    <div class="nav">
+
+        <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2023-03-02/logo_742606.png" alt="logo">
+        <div>
+            <p> Search</p>
+            <p> Offers </p>
+            <p> Help </p>
+            <p> Cart </p>
+            <p> Profile </p>
+        </div>
+        <button> Signin </button>
+
+    </div>
+
+    <div class="top">
+        <!-- 1 -->
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vcrqkiimqbszigatwroq" alt="">
+        <!-- 2 -->
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vcrqkiimqbszigatwroq" alt="">
+        <!-- 3 -->
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vcrqkiimqbszigatwroq" alt="">
+        <!-- 4 -->
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/vcrqkiimqbszigatwroq" alt="">
+
+    </div>
+
+    <div class="mid">
+        <!-- 1 -->
+        <div class="cards">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/4/11/8d1b6b43-20ef-4b21-b70e-06f9c23971b4_804724.JPG" alt="">
+            <h2> KFC </h2>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, aliquid!</p>
+            <p> $250 </p>
+        </div>
+        <!-- 2 -->
+        <div class="cards">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/4/11/8d1b6b43-20ef-4b21-b70e-06f9c23971b4_804724.JPG" alt="">
+            <h2> KFC </h2>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, aliquid!</p>
+            <p> $250 </p>
+        </div>
+        <!-- 3 -->
+        <div class="cards">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/4/11/8d1b6b43-20ef-4b21-b70e-06f9c23971b4_804724.JPG" alt="">
+            <h2> KFC </h2>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, aliquid!</p>
+            <p> $250 </p>
+        </div>
+        <!-- 4 -->
+        <div class="cards">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/4/11/8d1b6b43-20ef-4b21-b70e-06f9c23971b4_804724.JPG" alt="">
+            <h2> KFC </h2>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, aliquid!</p>
+            <p> $250 </p>
+        </div>
+        <!-- 5 -->
+        <div class="cards">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/4/11/8d1b6b43-20ef-4b21-b70e-06f9c23971b4_804724.JPG" alt="">
+            <h2> KFC </h2>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, aliquid!</p>
+            <p> $250 </p>
+        </div>
+        <!-- 6 -->
+        <div class="cards">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/4/11/8d1b6b43-20ef-4b21-b70e-06f9c23971b4_804724.JPG" alt="">
+            <h2> KFC </h2>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, aliquid!</p>
+            <p> $250 </p>
+        </div>
+        <!-- 7 -->
+        <div class="cards">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/4/11/8d1b6b43-20ef-4b21-b70e-06f9c23971b4_804724.JPG" alt="">
+            <h2> KFC </h2>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, aliquid!</p>
+            <p> $250 </p>
+        </div>
+        <!-- 8 -->
+        <div class="cards">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/4/11/8d1b6b43-20ef-4b21-b70e-06f9c23971b4_804724.JPG" alt="">
+            <h2> KFC </h2>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, aliquid!</p>
+            <p> $250 </p>
+        </div>
+
+    </div>
+
+    <div class="bottom">
+      <h1>Our picks for you</h1>
+
+      <div>
+        <!-- 1 -->
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/11/25/02f6bd53-7c7b-48e7-a102-f1f577ab87ea_958130.jpg" alt="">
+        <!-- 2 -->
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/11/25/02f6bd53-7c7b-48e7-a102-f1f577ab87ea_958130.jpg" alt="">
+        <!-- 3 -->
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/11/25/02f6bd53-7c7b-48e7-a102-f1f577ab87ea_958130.jpg" alt="">
+      </div>
+
+    </div>
+
+  </body>
+</html>
