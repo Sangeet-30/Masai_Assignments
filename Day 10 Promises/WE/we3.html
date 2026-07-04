@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> OTP Promise </title>
+</head>
+<body>
+    
+    <input type="number" placeholder="Enter OTP">
+    <button> Enter</button>
+
+</body>
+</html>
+
+<script>
+
+    let Button = document.querySelector("button") 
+    Button.addEventListener("click",function(event){
+        let otp = document.querySelector("input").value
+
+        let otpPromise = new Promise(function(resolve,reject){
+
+            setTimeout(function(){
+                
+                if (otp == 1234){
+                    resolve("OTP is correct")
+                }
+                else{
+                    reject("OTP is incorrect")
+                }
+            },2000)
+        })
+
+        otpPromise
+        .then(function(data){
+            alert(data)
+        })
+        .catch(function(data1){
+            alert(data1)
+        })
+    })
+
+    
+
+</script>
