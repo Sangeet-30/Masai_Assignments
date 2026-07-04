@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JS Timer </title>
+    <link rel="stylesheet" href="Pro-1.css">
+</head>
+<body>
+    
+    <div id="heading">
+        <h1> Timer Clock 🕒 </h1>
+    </div>
+    
+    <div id="clock">
+
+        <div id="clockHands">
+            <div id="Hours"> 00 </div> <span> : </span>
+            <div id="Minutes"> 00 </div> <span> : </span>
+            <div id="Seconds"> 00 </div>
+        </div>
+        
+        <div id="hand_name">
+            <div> Hours </div>
+            <div> Minutes </div>
+            <div> Seconds </div>
+        </div>
+    </div>
+
+    <div id="input_box">
+
+        <label for="hour"> Hours</label>
+        <input id="hour" type="number" min="0" max="99" placeholder="00"  ><span> : </span>
+
+        <label for="min"> Minutes</label>
+        <input id="min" type="number" min="0" max="59" placeholder="00"><span> : </span>
+
+        <label for="sec"> Seconds </label>
+        <input id="sec" type="number" min="0" max="59" placeholder="00">
+        
+    </div>
+
+
+    <div id="buttons">
+        <button id="start"> START <br> ▶ </button>
+        <button id="pause"> PAUSE <br> ❚❚ </button>
+        <button id="reset"> RESET <br> ↻ </button>
+    </div>
+    
+    
+</body>
+</html>
+
+<script>
+
+    let hour_el = document.getElementById("hour")
+    let min_el = document.getElementById("min")
+    let sec_el = document.getElementById("sec")
+
+    let dis_hour = document.getElementById("Hours")
+    let dis_min = document.getElementById("Minutes")
+    let dis_sec = document.getElementById("Seconds")
+
+    let hour;
+    let min;
+    let sec;
+    let time;
+
+    let isRunning = false;
+
+    let startButton = document.getElementById("start")
+        startButton.addEventListener("click",function(){
+
+            if (!isRunning && (hour == undefined || (hour==0 && min==0 && sec==0))){
+
+                hour = parseInt(hour_el.value) || 0 ;
+                min = parseInt(min_el.value) || 0 ;
+                sec = parseInt(sec_el.value) || 0 ;
+
+                if (sec >= 60){
+                    min = min + Math.floor(sec / 60);
+                    sec = sec % 60;
+                }
+                if (min >= 60){
+                    hour = hour + Math.floor(min / 60);
+                    min = min % 60;
+                }}
+
+            updateDisplay()
+        
+            clearInterval(time);
+            
+            isRunning = true;
+
+            time = setInterval(function(){
+                    
+                if (hour==0 && min==0 && sec==0 ){
+                    stopTimer()
+                    return ;}
+
+                sec-- ;
+                if (sec<0){
+                    sec = 59;
+                    min--
+                    if (min<0){
+                        min = 59;
+                        hour--
+                    }
+                } 
+                
+                updateDisplay()
+
+            },1000)
+        })
+            
+    let pauseButton = document.getElementById("pause")
+        pauseButton.addEventListener("click", function () {
+            stopTimer()
+        });
+        
+    let resetButton = document.getElementById("reset")
+        resetButton.addEventListener("click", function () {
+
+            stopTimer()
+
+            hour = 0;
+            min = 0;
+            sec = 0;
+
+            hour_el.value = "";
+            min_el.value = "";
+            sec_el.value = "";
+
+            updateDisplay()
+        });
+
+
+    function updateDisplay(){
+        dis_hour.textContent = String(hour).padStart(2,"0");
+        dis_min.textContent = String(min).padStart(2,"0");
+        dis_sec.textContent = String(sec).padStart(2,"0");
+    }
+
+    function stopTimer(){
+        clearInterval(time);
+        isRunning = false;
+    }
+
+</script>
+

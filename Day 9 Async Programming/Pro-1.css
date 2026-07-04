@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#heading{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 40px;
+}
+
+#clock{
+    box-sizing: border-box;
+    /* border: 2px solid red; */
+    width: 50%;
+    height: 230px;
+    margin: auto;
+    margin-top: 15px;
+    padding: 30px 50px;
+    background-color: rgb(108, 94, 187);
+    border-radius: 10px;
+}
+
+#clock>div{
+    display: flex;
+    justify-content: space-between;
+    color: gold;
+}
+
+#clock #clockHands div{
+    font-size: 120px;
+    width: 25%;
+    
+    border: none;
+}
+
+#clockHands div~span{
+    font-size: 120px;
+}
+
+#clock #hand_name{
+    padding: 0 30px 0 20px;
+    /* justify-content: space-between; */
+    margin-top: 20px;
+}
+
+#clock #hand_name div{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#buttons{
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    /* border: 2px solid purple; */
+}
+#buttons button{
+    font-size: 20px;
+    width: 120px;
+    height: 100px;
+    border-radius: 100%;
+    border: none;
+    padding-top: 5px ;
+    background-color: rgb(255, 92, 92);
+    color: white;
+    font-weight: bolder;
+}
+#buttons button:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+
+
+#input_box{
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+}
+#input_box input{
+    font-size: 30px;
+}
+#input_box label{
+    font-size: 20px;
+}
