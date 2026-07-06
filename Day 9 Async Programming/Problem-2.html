@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JS Stopwatch </title>
+    <link rel="stylesheet" href="Pro-2.css">
+</head>
+<body>
+    
+    <header id="heading"> ⏱ Stop-Watch </header>
+     
+    <div id="clock">
+
+        <div id="clockHands">
+            <span id="hour">00</span>
+            <span id="colon1">:</span>
+            <span id="min">00</span>
+            <span id="colon2">:</span>
+            <span id="sec">00</span>
+        </div>
+        
+        <div id="hand_name">
+            <div id="hourLabel"> Hours </div>
+            <div id="minLabel"> Minutes </div>
+            <div id="secLabel"> Seconds </div>
+        </div>
+    </div>
+
+    <section id="buttons">
+        <button id="start">
+            <span> START </span>
+            <span> ▶ </span>  
+        </button>
+        <button id="pause">
+            <span> PAUSE </span>
+            <span> ◼ </span> 
+        </button>
+        <button id="reset">
+            <span> RESET </span>
+            <span> ↻ </span>
+        </button>
+    </section>
+    
+</body>
+</html>
+
+<script>
+
+    let hour_el = document.getElementById("hour");
+    let min_el = document.getElementById("min");
+    let sec_el = document.getElementById("sec");
+    let colon1 = document.getElementById("colon1");
+    let colon2 = document.getElementById("colon2");
+
+    let hourLabel = document.getElementById("hourLabel");
+    let minLabel = document.getElementById("minLabel");
+    let secLabel = document.getElementById("secLabel");
+
+    let startButton = document.getElementById("start");
+    let pauseButton = document.getElementById("pause");
+    let resetButton = document.getElementById("reset");
+
+    let hour = 0;
+    let min = 0;
+    let sec = 0;
+    let time;
+    let isRunning = false
+
+    updateDisplay()
+
+    startButton.addEventListener("click",function(){
+
+        if (isRunning){
+            return;
+        }
+
+        isRunning = true ;
+
+        time = setInterval(function(){
+            sec++ ;
+
+            if (sec>=60){
+                sec = 0 ;
+                min++ ;
+
+                if (min>=60){
+                    min = 0 ;
+                    hour++ ;          
+                }
+            }
+            updateDisplay()
+            },1000)
+        });
+
+
+    pauseButton.addEventListener("click",function(){
+        clearInterval(time)
+        isRunning = false
+    });
+
+    resetButton.addEventListener("click",function(){
+        clearInterval(time)
+        
+        hour = 0;
+        min = 0;
+        sec = 0;
+
+        updateDisplay()
+
+        isRunning = false
+    });
+
+    function updateDisplay(){
+
+        if (hour>0){  
+
+            hour_el.classList.remove("hide")
+            min_el.classList.remove("hide")
+            sec_el.classList.remove("hide")
+           
+            colon1.classList.remove("hide");
+            colon2.classList.remove("hide");
+
+            hourLabel.classList.remove("hide");
+            minLabel.classList.remove("hide");
+            secLabel.classList.remove("hide");
+
+            hour_el.innerText = String(hour).padStart(2,"0");
+            min_el.innerText = String(min).padStart(2,"0");
+            sec_el.innerText = String(sec).padStart(2,"0");
+        }
+        else if (min>0){
+            
+            hour_el.classList.add("hide");
+            colon1.classList.add("hide");
+            hourLabel.classList.add("hide");
+
+            min_el.classList.remove("hide");
+            colon2.classList.remove("hide");
+            sec_el.classList.remove("hide");
+
+            minLabel.classList.remove("hide");
+            secLabel.classList.remove("hide");
+            
+            min_el.innerText = String(min).padStart(2,"0");
+            sec_el.innerText = String(sec).padStart(2,"0");
+
+        }
+        else{            
+
+            hour_el.classList.add("hide");
+            colon1.classList.add("hide");
+
+            min_el.classList.add("hide");
+            colon2.classList.add("hide");
+
+            hourLabel.classList.add("hide");
+            minLabel.classList.add("hide");
+
+            sec_el.classList.remove("hide");
+            secLabel.classList.remove("hide");
+
+            sec_el.innerText = String(sec).padStart(2,"0");
+        }
+        
+    }
+
+</script>
