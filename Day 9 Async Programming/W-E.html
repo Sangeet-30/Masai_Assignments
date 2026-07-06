@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Timer Clock</title>
+    <title> Timer Clock </title>
     <link rel="stylesheet" href="W-E.css">
 </head>
 <body>
     
-    <div id="heading">
-        <h1> Timer Clock 🕒 </h1>
-    </div>
+    <header id="heading"> Timer Clock 🕒 </header>
+     
     <div id="clock">
 
         <div id="clockHands">
-            <div id="hour"> 00</div> <span> : </span>
-            <div id="min"> 00 </div> <span> : </span>
-            <div id="sec"> 00</div>
+            <span id="hour">00</span> <span> : </span>
+            <span id="min">00</span> <span> : </span>
+            <span id="sec">00</span>
         </div>
         
         <div id="hand_name">
@@ -27,14 +26,23 @@
     </div>
 
     <div id="buttons">
-        <button id="start"> START <br> ▶ </button>
-        <button id="stop"> STOP <br> ◼ </button>
-        <button id="reset"> RESET <br> ↻ </button>
+        <button id="start">
+            <span> START </span>
+            <span> ▶ </span>  
+        </button>
+        <button id="stop">
+            <span> STOP </span>
+            <span> ◼ </span> 
+        </button>
+        <button id="reset">
+            <span> RESET </span>
+            <span> ↻ </span>
+        </button>
     </div>
-    
     
 </body>
 </html>
+
 
 <script>
 
@@ -57,11 +65,11 @@
                     if (min>=60){
                         min = 0
                         hour ++
-                        hour_el.innerText= hour
+                        hour_el.innerText= String(hour).padStart(2,"0");
                         }
-                    min_el.innerText = min
+                    min_el.innerText = String(min).padStart(2,"0")
                     }
-                sec_el.innerText = sec
+                sec_el.innerText = String(sec).padStart(2,"0")
                 },1000)
         })
 
