@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Promise Odd Even</title>
+</head>
+<body>
+
+    <input type="text" id="data">
+    <input type="submit" id="submit">
+    <h1> Input Data Displayed here</h1>
+    
+</body>
+</html>
+
+<script>
+
+    let Intdata = document.querySelector("#data")
+    let Submit = document.querySelector("#submit")
+    let display = document.querySelector("h1")
+
+    function getData(data){
+        return new Promise(function(resolve,reject){
+
+            data = data.trim();
+            if(data === ""){
+                reject("Please enter some data");
+                return;
+            }
+            if(isNaN(data)){
+                reject("Given data is a String");
+                return;
+            }
+
+            data = Number(data);
+            if(data % 2 === 0){
+                setTimeout(() => resolve("Given data is Even Number"),4000);
+            }
+            else{
+                setTimeout(() => resolve("Given data is Odd Number"),2000);
+            }
+        })
+    }
+
+    Submit.addEventListener("click", function () {
+
+        display.innerText = "Checking...";
+
+        getData(Intdata.value)
+
+        .then(function(result){
+            display.innerText = result;
+        })
+        .catch(function(error){
+            display.innerText = error;
+        });
+    })
+
+    document.body.style.marginLeft = "30px"
+    document.body.style.marginTop = "30px"
+
+    
+</script>
