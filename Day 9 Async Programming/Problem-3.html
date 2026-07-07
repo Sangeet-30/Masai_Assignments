@@ -85,9 +85,10 @@
     start.addEventListener("click",function(){
         
         if (!running){
-            slide = setInterval(function(){
-                nextImage()
-            },2000) ;      
+            // slide = setInterval(function(){
+            //     nextImage()
+            // },2000) ; 
+            slide = setInterval(nextImage,2000)     
 
             start.textContent = "Stop" ;
             running = true ;
@@ -102,7 +103,8 @@
 
 
     function showImage(){
-        image.setAttribute("src",imageArr[currentImage])
+        // image.setAttribute("src",imageArr[currentImage]) ;
+        image.src = imageArr[currentImage] ;
     }
 
     function nextImage(){
