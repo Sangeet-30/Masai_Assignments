@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Slide Show </title>
+    <link rel="stylesheet" href="Pro-3.css">
+</head>
+<body>
+
+    <header> Wallpaper Slideshow</header>
+
+    <div id="images">
+        <img src="" alt="wallapaper">
+    </div>
+    <div id="buttons">
+        <button id="prev">Prev</button>
+        <button id="start">Start</button>
+        <button id="next">Next</button>
+    </div>
+     
+</body>
+</html>
+<script>
+
+    const image = document.querySelector("img");
+    const prev = document.querySelector("#prev");
+    const next = document.querySelector("#next");
+    const start = document.querySelector("#start");
+
+    let currentImage = 0 ;
+
+    let imageArr = [
+        "https://wallpaperaccess.com/full/43901.jpg",
+        "https://wallpaperaccess.com/full/43871.jpg",
+        "https://wallpaperaccess.com/full/19619.jpg",
+        "https://wallpaperaccess.com/full/43868.jpg",
+        "https://wallpaperaccess.com/full/43869.jpg",
+        "https://wallpaperaccess.com/full/43870.jpg",
+        "https://wallpaperaccess.com/full/43872.jpg",
+        "https://wallpaperaccess.com/full/43879.jpg",
+        "https://wallpaperaccess.com/full/43884.jpg",
+        "https://wallpaperaccess.com/full/36307.jpg",       
+        "https://wallpaperaccess.com/full/43904.jpg",
+        "https://wallpaperaccess.com/full/43912.jpg",
+        "https://wallpaperaccess.com/full/43915.jpg",
+        "https://wallpaperaccess.com/full/43926.png",
+        "https://wallpaperaccess.com/full/43927.jpg",
+        "https://wallpaperaccess.com/full/26190.jpg",
+        "https://wallpaperaccess.com/full/43916.jpg",
+        "https://wallpaperaccess.com/full/43911.jpg",
+        "https://wallpaperaccess.com/full/43908.jpg",
+        "https://wallpaperaccess.com/full/43900.jpg",
+        "https://wallpaperaccess.com/full/43888.jpg",
+        "https://wallpaperaccess.com/full/43881.jpg"
+    ];
+
+    showImage();
+
+    next.addEventListener("click",function(){
+
+        clearInterval(slide) ;
+        start.textContent ="Start" ;
+        running = false ;
+
+        nextImage()
+    })
+
+    prev.addEventListener("click",function(){
+
+        clearInterval(slide) ;
+        start.textContent ="Start" ;
+        running = false ;
+
+        currentImage-- ;
+        if (currentImage < 0){
+            currentImage = imageArr.length -1 ;
+        }
+        showImage() ;
+    })
+
+    let slide;
+    let running = false ;
+
+    start.addEventListener("click",function(){
+        
+        if (!running){
+            slide = setInterval(function(){
+                nextImage()
+            },2000) ;      
+
+            start.textContent = "Stop" ;
+            running = true ;
+        }
+        else{
+            clearInterval(slide) ;
+            start.textContent ="Start" ;
+            running = false ;
+        }
+
+    })
+
+
+    function showImage(){
+        image.setAttribute("src",imageArr[currentImage])
+    }
+
+    function nextImage(){
+        currentImage++ ;
+        if (currentImage >= imageArr.length){
+            currentImage = 0
+        }
+        showImage()
+    }
+
+
+</script>
