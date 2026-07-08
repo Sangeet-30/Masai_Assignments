@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Todos Table </title>
+    <style>
+
+        body{
+            background-color: antiquewhite;
+        }
+         
+        header{
+            text-align: center;
+            font-size: 70px;
+            font-weight: bolder;
+            text-decoration: underline double 2px red ;
+            text-underline-offset: 8px;
+
+            background: linear-gradient(135deg,red, yellow);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        table{
+            margin: auto;
+            margin-top: 10px;
+            width: 90%;
+            text-align: center;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th:nth-child(1) { width: 100px; }
+        th:nth-child(2) { width: 100px; }
+        th:nth-child(4) { width: 150px; }
+        
+        th, td{
+            border: 2px solid black;
+            padding: 8px;
+        }
+        thead{
+            font-size: 25px;
+            background-color: lightpink;
+            color: maroon;
+        }
+        tbody{
+            font-size: 20px;
+            background-color: powderblue;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <header> Todo Table </header>
+
+    <table border="1" ; cellspacing="0">
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> User ID </th>
+                <th> Title </th>
+                <th> Completed </th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    
+</body>
+</html>
+
+<script>
+
+
+    let api = "https://jsonplaceholder.typicode.com/todos" ;
+
+    let response = fetch(api) ;
+
+    response.then(function(res){
+        return res.json()
+    })
+    .then(function(data){
+        Display(data)
+    })
+
+    let tbody = document.querySelector("tbody") ;
+
+    function Display(data){
+        console.log(data)
+        data.forEach(function(element){
+
+            let tr = document.createElement("tr");
+            let ID = document.createElement("td") ;
+            ID.innerText = element.id ;
+            let userID = document.createElement("td") ;
+            userID.innerText = element.userId ;
+            let Title = document.createElement("td") ;
+            Title.innerText = element.title ;
+            let Completed = document.createElement("td") ;
+            Completed.innerText = element.completed ;
+
+            tr.append(ID,userID,Title,Completed) ;
+            tbody.append(tr)
+
+        })  
+    }
+
+</script>
