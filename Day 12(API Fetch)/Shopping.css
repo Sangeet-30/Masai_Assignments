@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: aliceblue;
+}
+
+header{
+    font-size: 60px;
+    text-align: center;
+    font-weight: bolder;
+    background: linear-gradient(90deg,lightcoral,lightcyan);
+    color: white;
+    padding: 10px;
+}
+
+#container{
+    margin: 20px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+#container .card{
+    /* border: 2px solid black; */
+    text-align: center;
+    padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#container .card >img{
+    width: 100%;
+    margin-top: 20px;
+    height: 220px;
+    object-fit: contain;
+}
+#container .card .rating{
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    color: blue;
+}
+
+.label{
+    display: inline-block;
+    font-weight: bolder;
+    margin-top: 10px;
+    
+}
+
+.description{
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+p{
+    text-align: justify;
+}
+
+.title{
+    font-size:22px;
+    min-height:80px;
+}
+.read-more{
+    border: none;
+    color: green;
+    font-weight: bold;
+    background-color:aliceblue;
+    cursor: pointer;
+}
+.read-more:hover{
+    color: blue;
+}
+
+#feature{
+    display: flex;
+    width: 50%;
+    margin: auto;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+#searchBox input{
+    border: none;
+    padding: 5px;
+    /* border-top: 1px solid black;
+    border-bottom: 1px solid black; */
+}
+
+/* #searchBox{
+    border: 2px solid red;
+} */
+
+#search{
+    font-size: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: 1px solid black;
+}
+
+#searchBtn{
+    font-size: 19px;
+    border: 1px solid black;
+    margin-left: -4px;
+    background-color: #F3A847;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#filter{
+    font-size: 16px;
+}
