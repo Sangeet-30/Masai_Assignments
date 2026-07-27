@@ -1,33 +1,60 @@
-# Masai Assignments
+# 📚 Masai Assignments
 
-This repository contains my daily assignments and practice projects completed during my learning journey at Masai.
+This repository contains my daily assignments, coding exercises, and practice projects completed during my Full Stack Web Development learning journey.
 
-## 📚 Topics Covered
+It serves as a record of my progress while learning frontend development.
 
-* HTML
-* CSS
-* JavaScript
-* DOM
-* API
-* Mini Projects
+---
 
-## 🚀 Live Demo
+## 🚀 Topics Covered
 
-🌐 https://sangeet-assignments.netlify.app/
+- HTML5
+- CSS3
+- JavaScript
+- DOM Manipulation
+- Events
+- Async JavaScript
+- Fetch API
+- Responsive Design Basics
 
-## 📂 Repository
+---
 
-🔗 https://github.com/Sangeet-30/Masai_Assignments
+## 📂 Repository Structure
 
-## 🎯 Goal
+- Day-wise Assignments
+- PSC Problems
+- Pair Programming
+- JavaScript Practice
+- Mini Projects
+- API Practice
 
-* Practice daily concepts
-* Improve problem-solving skills
-* Build projects
-* Track learning progress
+---
+
+## 🌐 Live Demo
+
+https://sangeet-assignments.netlify.app/
+
+---
+
+## 🎯 Purpose
+
+- Practice frontend concepts
+- Strengthen problem-solving skills
+- Track learning progress
+- Build a strong development foundation
+
+---
+
+## 🛠 Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript
+- Git
+- GitHub
 
 ---
 
 ⭐ If you find this repository helpful, consider giving it a star.
 
-**Made with ❤️ by Sangeet Kumar**
+**Made with ❤️ by Sangeet**
